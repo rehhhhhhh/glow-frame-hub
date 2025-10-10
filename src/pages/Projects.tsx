@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Play } from "lucide-react";
 import { useState } from "react";
 import projectsData from "@/data/projects.json";
+import ScrapbookBackground from "@/components/ScrapbookBackground";
 
 export default function Projects() {
   const [filter, setFilter] = useState("all");
@@ -14,8 +15,10 @@ export default function Projects() {
     : projectsData.filter(p => p.category === filter);
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen pt-24 pb-16 relative overflow-hidden">
+      <ScrapbookBackground />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

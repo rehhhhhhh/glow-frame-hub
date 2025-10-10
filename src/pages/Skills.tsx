@@ -3,6 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import siteData from "@/data/site.json";
 import { Gamepad2, Video, Palette, Code } from "lucide-react";
+import ScrapbookBackground from "@/components/ScrapbookBackground";
 
 const categoryIcons: Record<string, typeof Gamepad2> = {
   "Game Development": Gamepad2,
@@ -18,8 +19,10 @@ export default function Skills() {
   const categories = [...new Set(siteData.skills.map(s => s.category))];
 
   return (
-    <div className="min-h-screen pt-24 pb-16">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen pt-24 pb-16 relative overflow-hidden">
+      <ScrapbookBackground />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

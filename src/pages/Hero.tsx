@@ -3,16 +3,20 @@ import { ArrowDown, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Hero3DScene from "@/components/Hero3DScene";
 import ParticleBackground from "@/components/ParticleBackground";
+import ScrapbookBackground from "@/components/ScrapbookBackground";
 import { Link } from "react-router-dom";
 import siteData from "@/data/site.json";
 
 export default function Hero() {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Layered scrapbook background */}
+      <ScrapbookBackground />
+      
+      {/* Interactive particles on top of scrapbook */}
       <ParticleBackground />
       
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10" />
-      
+      {/* 3D Scene */}
       <Hero3DScene />
 
       <div className="relative z-10 container mx-auto px-4 text-center">

@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import siteData from "@/data/site.json";
+import ScrapbookBackground from "@/components/ScrapbookBackground";
 
 export default function About() {
   return (
-    <div className="min-h-screen pt-24 pb-16">
-      <div className="container mx-auto px-4">
+    <div className="min-h-screen pt-24 pb-16 relative overflow-hidden">
+      <ScrapbookBackground />
+      
+      <div className="container mx-auto px-4 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
