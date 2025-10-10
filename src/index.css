@@ -8,48 +8,48 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Cinematic Dark Theme - Gamer/Video-Editor Aesthetic */
-    --background: 220 20% 8%;
-    --foreground: 210 40% 98%;
+    /* Black Gradient with Green - Immersive Gaming Theme */
+    --background: 120 100% 3%;
+    --foreground: 120 20% 95%;
 
-    --card: 220 18% 12%;
-    --card-foreground: 210 40% 98%;
+    --card: 120 50% 5%;
+    --card-foreground: 120 20% 95%;
 
-    --popover: 220 20% 10%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 120 50% 5%;
+    --popover-foreground: 120 20% 95%;
 
-    /* Vibrant Accent Colors */
-    --primary: 280 100% 70%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 280 100% 80%;
+    /* Vibrant Green Accent Colors */
+    --primary: 142 76% 45%;
+    --primary-foreground: 120 100% 5%;
+    --primary-glow: 142 80% 55%;
 
-    --secondary: 195 100% 50%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 142 70% 35%;
+    --secondary-foreground: 120 20% 95%;
 
-    --muted: 220 15% 20%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 120 30% 15%;
+    --muted-foreground: 120 10% 60%;
 
-    --accent: 340 100% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 142 80% 50%;
+    --accent-foreground: 120 100% 5%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 120 20% 95%;
 
-    --border: 220 15% 18%;
-    --input: 220 15% 15%;
-    --ring: 280 100% 70%;
+    --border: 120 30% 18%;
+    --input: 120 30% 18%;
+    --ring: 142 76% 45%;
 
     --radius: 0.75rem;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(280 100% 70% / 0.2), hsl(195 100% 50% / 0.2));
-    --gradient-card: linear-gradient(145deg, hsl(220 18% 14%), hsl(220 18% 10%));
-    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(280 100% 70% / 0.3), transparent 70%);
+    --gradient-hero: linear-gradient(135deg, hsl(120 100% 3%), hsl(120 50% 5%));
+    --gradient-card: linear-gradient(145deg, hsl(120 50% 6%), hsl(120 50% 4%));
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(142 76% 45% / 0.3), transparent 70%);
     
     /* Shadows & Effects */
-    --shadow-glow: 0 0 40px hsl(280 100% 70% / 0.4);
-    --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.5);
-    --film-grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+    --shadow-glow: 0 0 40px hsl(142 76% 45% / 0.5);
+    --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.7);
+    --film-grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
     
     /* Transitions */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -57,39 +57,39 @@ All colors MUST be HSL.
   }
 
   .light {
-    --background: 0 0% 98%;
-    --foreground: 220 20% 10%;
+    --background: 0 0% 100%;
+    --foreground: 120 100% 5%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 10%;
+    --card-foreground: 120 100% 5%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 10%;
+    --popover-foreground: 120 100% 5%;
 
-    --primary: 280 100% 60%;
+    --primary: 142 76% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 280 100% 70%;
+    --primary-glow: 142 80% 55%;
 
-    --secondary: 195 100% 45%;
+    --secondary: 142 70% 35%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 220 15% 92%;
-    --muted-foreground: 220 15% 40%;
+    --muted: 120 20% 96%;
+    --muted-foreground: 120 10% 40%;
 
-    --accent: 340 100% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 142 80% 50%;
+    --accent-foreground: 120 100% 5%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 85%;
-    --input: 220 15% 90%;
-    --ring: 280 100% 60%;
+    --border: 120 20% 90%;
+    --input: 120 20% 90%;
+    --ring: 142 76% 45%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(280 100% 95%), hsl(195 100% 95%));
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(220 15% 96%));
-    --shadow-glow: 0 0 30px hsl(280 100% 60% / 0.2);
-    --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.1);
+    --gradient-hero: linear-gradient(135deg, hsl(142 76% 95%), hsl(142 80% 98%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(120 20% 98%));
+    --shadow-glow: 0 0 30px hsl(142 76% 45% / 0.3);
+    --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.15);
   }
 }
 
@@ -100,10 +100,24 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground overflow-x-hidden;
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23c084fc' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3Cpath d='M12 6v12M6 12h12'/%3E%3C/svg%3E"), auto;
   }
 
-  body.custom-cursor-disabled {
+  /* Custom Cursor Styles */
+  body:not(.custom-cursor-disabled) {
+    cursor: url('/clapperboard-cursor.svg') 12 12, auto;
+  }
+
+  body:not(.custom-cursor-disabled) a,
+  body:not(.custom-cursor-disabled) button,
+  body:not(.custom-cursor-disabled) [role="button"] {
+    cursor: url('/clapperboard-cursor.svg') 12 12, pointer;
+  }
+
+  .custom-cursor-disabled {
+    cursor: auto !important;
+  }
+
+  .custom-cursor-disabled * {
     cursor: auto !important;
   }
 
@@ -116,18 +130,8 @@ All colors MUST be HSL.
     height: 100%;
     background: var(--film-grain);
     pointer-events: none;
-    opacity: 0.03;
+    opacity: 0.05;
     z-index: 9999;
-  }
-
-  a, button, [role="button"] {
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 24 24' fill='%23c084fc' stroke='%23c084fc' stroke-width='2'%3E%3Ccircle cx='12' cy='12' r='10'/%3E%3C/svg%3E"), pointer;
-  }
-
-  body.custom-cursor-disabled a,
-  body.custom-cursor-disabled button,
-  body.custom-cursor-disabled [role="button"] {
-    cursor: pointer !important;
   }
 }
 

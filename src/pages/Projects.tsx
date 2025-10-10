@@ -1,13 +1,25 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Play } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import projectsData from "@/data/projects.json";
 import ScrapbookBackground from "@/components/ScrapbookBackground";
+import ParticleBackground from "@/components/ParticleBackground";
+import Enhanced3DScene from "@/components/Enhanced3DScene";
+import GreenParticleBurst from "@/components/GreenParticleBurst";
 
 export default function Projects() {
   const [filter, setFilter] = useState("all");
+  const [showBurst, setShowBurst] = useState(true);
+  const [showProjects, setShowProjects] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowProjects(true);
+    }, 1200);
+    return () => clearTimeout(timer);
+  }, []);
 
   const categories = ["all", ...new Set(projectsData.map(p => p.category))];
   const filteredProjects = filter === "all" 
@@ -15,8 +27,11 @@ export default function Projects() {
     : projectsData.filter(p => p.category === filter);
 
   return (
-    <div className="min-h-screen pt-24 pb-16 relative overflow-hidden">
+    <div className="min-h-screen pt-24 pb-16 relative overflow-hidden bg-gradient-to-b from-background via-background to-black">
+      {showBurst && <GreenParticleBurst onComplete={() => setShowBurst(false)} />}
       <ScrapbookBackground />
+      <ParticleBackground />
+      <Enhanced3DScene />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -44,14 +59,25 @@ export default function Projects() {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, index) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-              >
+          <AnimatePresence>
+            {showProjects && (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {filteredProjects.map((project, index) => (
+                  <motion.div
+                    key={project.id}
+                    initial={{ opacity: 0, y: -500, rotate: Math.random() * 360 }}
+                    animate={{ 
+                      opacity: 1, 
+                      y: 0,
+                      rotate: 0,
+                    }}
+                    transition={{ 
+                      delay: index * 0.1,
+                      type: "spring",
+                      stiffness: 100,
+                      damping: 15,
+                    }}
+                  >
                 <Card className="overflow-hidden hover-lift card-glow group">
                   <div className="relative h-48 overflow-hidden">
                     <img
@@ -105,9 +131,11 @@ export default function Projects() {
                     </div>
                   </div>
                 </Card>
-              </motion.div>
-            ))}
-          </div>
+                  </motion.div>
+                ))}
+              </div>
+            )}
+          </AnimatePresence>
         </motion.div>
       </div>
     </div>

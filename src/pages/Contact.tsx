@@ -1,20 +1,33 @@
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "sonner";
 import siteData from "@/data/site.json";
 import ScrapbookBackground from "@/components/ScrapbookBackground";
+import ParticleBackground from "@/components/ParticleBackground";
+import Enhanced3DScene from "@/components/Enhanced3DScene";
+import allmightImage from "@/assets/allmight-smile.png";
 
 export default function Contact() {
+  const [showAllMight, setShowAllMight] = useState(true);
+  const [showContent, setShowContent] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowAllMight(false);
+      setShowContent(true);
+    }, 2500);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,15 +44,72 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-16 relative overflow-hidden">
+    <div className="min-h-screen pt-24 pb-16 relative overflow-hidden bg-gradient-to-b from-background via-background to-black">
       <ScrapbookBackground />
+      <ParticleBackground />
+      <Enhanced3DScene />
+      
+      <AnimatePresence>
+        {showAllMight && (
+          <motion.div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <motion.div
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              exit={{ scale: 0, rotate: 180 }}
+              transition={{ 
+                type: "spring", 
+                stiffness: 100, 
+                damping: 15,
+                duration: 1.5 
+              }}
+              className="relative"
+            >
+              <img 
+                src={allmightImage} 
+                alt="All Might" 
+                className="w-64 h-64 md:w-96 md:h-96 object-contain"
+              />
+              <motion.div
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background: 'radial-gradient(circle, hsl(142, 76%, 45%) 0%, transparent 70%)',
+                }}
+                animate={{
+                  scale: [1, 1.5, 1],
+                  opacity: [0.5, 0.8, 0.5],
+                }}
+                transition={{
+                  duration: 1.5,
+                  repeat: Infinity,
+                }}
+              />
+            </motion.div>
+            <motion.h2
+              className="absolute bottom-32 text-4xl font-bold text-primary text-glow"
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ delay: 0.5 }}
+            >
+              I AM HERE!
+            </motion.h2>
+          </motion.div>
+        )}
+      </AnimatePresence>
       
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+        <AnimatePresence>
+          {showContent && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+            >
           <h1 className="text-5xl md:text-7xl font-bold mb-4 text-glow">Get In Touch</h1>
           <p className="text-xl text-muted-foreground mb-12">
             Let's collaborate on your next project
@@ -169,9 +239,11 @@ export default function Contact() {
                   ))}
                 </div>
               </Card>
-            </motion.div>
-          </div>
-        </motion.div>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       </div>
     </div>
   );

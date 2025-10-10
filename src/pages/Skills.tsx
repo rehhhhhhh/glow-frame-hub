@@ -4,6 +4,8 @@ import { Progress } from "@/components/ui/progress";
 import siteData from "@/data/site.json";
 import { Gamepad2, Video, Palette, Code } from "lucide-react";
 import ScrapbookBackground from "@/components/ScrapbookBackground";
+import ParticleBackground from "@/components/ParticleBackground";
+import Enhanced3DScene from "@/components/Enhanced3DScene";
 
 const categoryIcons: Record<string, typeof Gamepad2> = {
   "Game Development": Gamepad2,
@@ -15,12 +17,26 @@ const categoryIcons: Record<string, typeof Gamepad2> = {
   "Mobile Editing": Video,
 };
 
+const experienceYears: Record<string, string> = {
+  "Unity": "3+ years",
+  "Unreal Engine": "2+ years",
+  "AR/VR Development": "3+ years",
+  "C#": "3+ years",
+  "Adobe Premiere Pro": "4+ years",
+  "After Effects": "3+ years",
+  "Alight Motion": "2+ years",
+  "Blender": "2+ years",
+  "Photoshop": "4+ years",
+};
+
 export default function Skills() {
   const categories = [...new Set(siteData.skills.map(s => s.category))];
 
   return (
-    <div className="min-h-screen pt-24 pb-16 relative overflow-hidden">
+    <div className="min-h-screen pt-24 pb-16 relative overflow-hidden bg-gradient-to-b from-background via-background to-black">
       <ScrapbookBackground />
+      <ParticleBackground />
+      <Enhanced3DScene />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -60,10 +76,23 @@ export default function Skills() {
                           transition={{ delay: (catIndex * 0.1) + (index * 0.05) }}
                         >
                           <div className="flex items-center justify-between mb-2">
-                            <span className="font-semibold text-lg">{skill.name}</span>
+                            <div className="flex items-center gap-2">
+                              <span className="font-semibold text-lg">{skill.name}</span>
+                              {experienceYears[skill.name] && (
+                                <span className="text-xs px-2 py-1 bg-primary/20 text-primary rounded-full">
+                                  {experienceYears[skill.name]}
+                                </span>
+                              )}
+                            </div>
                             <span className="text-sm text-muted-foreground">{skill.level}%</span>
                           </div>
-                          <Progress value={skill.level} className="h-2" />
+                          <motion.div
+                            initial={{ width: 0 }}
+                            animate={{ width: "100%" }}
+                            transition={{ delay: (catIndex * 0.1) + (index * 0.05) + 0.2, duration: 1 }}
+                          >
+                            <Progress value={skill.level} className="h-2" />
+                          </motion.div>
                         </motion.div>
                       ))}
                     </div>

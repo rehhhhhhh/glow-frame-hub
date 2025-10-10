@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowDown, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Hero3DScene from "@/components/Hero3DScene";
+import Enhanced3DScene from "@/components/Enhanced3DScene";
 import ParticleBackground from "@/components/ParticleBackground";
 import ScrapbookBackground from "@/components/ScrapbookBackground";
 import { Link } from "react-router-dom";
@@ -9,7 +9,7 @@ import siteData from "@/data/site.json";
 
 export default function Hero() {
   return (
-    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-background via-background to-black">
       {/* Layered scrapbook background */}
       <ScrapbookBackground />
       
@@ -17,7 +17,7 @@ export default function Hero() {
       <ParticleBackground />
       
       {/* 3D Scene */}
-      <Hero3DScene />
+      <Enhanced3DScene />
 
       <div className="relative z-10 container mx-auto px-4 text-center">
         <motion.div
