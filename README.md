@@ -1,73 +1,144 @@
-# Welcome to your Lovable project
+# Rahul S - Immersive Portfolio
 
-## Project info
+A highly animated, immersive portfolio website showcasing AR/VR development, video editing, and game design work.
 
-**URL**: https://lovable.dev/projects/010d6509-186d-4366-a2fa-7ae3591af5ea
+## 🚀 Features
 
-## How can I edit this code?
+- **Interactive 3D Hero Scene** - Floating film-roll, camera, pet, and planet with mouse parallax
+- **Particle System** - Interactive background particles that respond to mouse hover and clicks
+- **Lovable AI Companion** - RahulBot assists visitors with navigation and quick info
+- **Custom Film-Roll Cursor** - Animated cursor with hover states
+- **Smooth Page Transitions** - Framer Motion powered animations between pages
+- **Dark/Light Theme Toggle** - Switch between themes seamlessly
+- **Responsive Design** - Fully responsive across all devices
+- **SEO Optimized** - Proper meta tags, semantic HTML, and structured data
 
-There are several ways of editing your application.
+## 🛠️ Tech Stack
 
-**Use Lovable**
+- **React 18** - Latest React with hooks
+- **Framer Motion** - Smooth animations and page transitions
+- **Three.js / react-three-fiber** - 3D graphics and interactive scenes
+- **tsParticles** - Interactive particle system
+- **Tailwind CSS** - Utility-first CSS framework
+- **TypeScript** - Type-safe development
+- **shadcn/ui** - Beautiful UI components
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/010d6509-186d-4366-a2fa-7ae3591af5ea) and start prompting.
+## 📁 Project Structure
 
-Changes made via Lovable will be committed automatically to this repo.
+```
+src/
+├── components/
+│   ├── Hero3DScene.tsx       # 3D floating objects scene
+│   ├── ParticleBackground.tsx # Interactive particles
+│   ├── Navigation.tsx         # Main navigation bar
+│   ├── SocialToolbar.tsx      # Fixed social media links
+│   ├── AICompanion.tsx        # RahulBot assistant
+│   ├── ThemeToggle.tsx        # Dark/Light theme switcher
+│   └── ui/                    # shadcn UI components
+├── pages/
+│   ├── Hero.tsx              # Landing page with 3D scene
+│   ├── About.tsx             # About section
+│   ├── Projects.tsx          # Portfolio projects
+│   ├── Skills.tsx            # Skills visualization
+│   ├── Contact.tsx           # Contact form
+│   └── NotFound.tsx          # 404 page
+├── data/
+│   ├── site.json             # Site configuration & contact info
+│   └── projects.json         # Project data
+└── index.css                 # Design system & theme variables
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+public/
+└── resume.pdf                # Downloadable resume
 ```
 
-**Edit a file directly in GitHub**
+## 🎨 Customization
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Update Site Information
 
-**Use GitHub Codespaces**
+Edit `src/data/site.json` to update:
+- Name and tagline
+- Contact information (email, phone)
+- Social media links
+- About text
+- Skills and proficiency levels
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+### Update Projects
 
-## What technologies are used for this project?
+Edit `src/data/projects.json` to:
+- Add/remove projects
+- Update project descriptions
+- Change demo links
+- Modify tech stack tags
 
-This project is built with:
+### Change Theme Colors
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Edit `src/index.css` to customize:
+- Color scheme (primary, secondary, accent)
+- Gradients and glow effects
+- Animation timings
+- Shadow effects
 
-## How can I deploy this project?
+### Replace Assets
 
-Simply open [Lovable](https://lovable.dev/projects/010d6509-186d-4366-a2fa-7ae3591af5ea) and click on Share -> Publish.
+Images are stored in:
+- `src/assets/` - Project thumbnails and images
+- `public/` - Static files like resume PDF
 
-## Can I connect a custom domain to my Lovable project?
+### Modify 3D Scene
 
-Yes, you can!
+Edit `src/components/Hero3DScene.tsx` to:
+- Change 3D object shapes and colors
+- Adjust animation speeds
+- Modify parallax behavior
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 🚀 Deployment
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+This project is ready for deployment on:
+- **Vercel** (Recommended)
+- **Netlify**
+- **GitHub Pages**
+
+Simply connect your repository and deploy!
+
+## ⚙️ Environment Variables
+
+No environment variables required for basic functionality.
+
+For contact form backend integration, add:
+- Email service API key (EmailJS, SendGrid, etc.)
+
+## 📱 Responsive Design
+
+Fully responsive breakpoints:
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
+
+## ♿ Accessibility
+
+- Keyboard navigation support
+- ARIA labels on interactive elements
+- `prefers-reduced-motion` support
+- Custom cursor can be disabled
+- Semantic HTML structure
+
+## 🎭 Performance
+
+- Lazy-loaded 3D assets
+- Optimized particle count
+- Compressed images
+- Code splitting
+- Tree-shaking
+
+## 📄 License
+
+All rights reserved - Rahul S © 2025
+
+## 🤝 Contact
+
+- Email: rahulsaravanan44@gmail.com
+- Phone: +91 9944819246
+
+---
+
+Built with ❤️ using Lovable

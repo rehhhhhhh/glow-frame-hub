@@ -1,0 +1,90 @@
+[
+  {
+    "id": "no-light-left",
+    "title": "No Light Left",
+    "category": "Game Development",
+    "description": "A First-Person Horror Maze Game - a suspense-filled maze-based horror game entirely developed by me using Unity.",
+    "fullDescription": "No Light Left is a suspense-filled maze-based horror game entirely developed by me using Unity. From designing the game mechanics and eerie environment to implementing audio and lighting for maximum tension, every aspect was crafted to deliver a truly immersive experience. This project highlights my skills in game development, Unity, level design, and interactive horror storytelling.",
+    "image": "/src/assets/no-light-left.jpg",
+    "demoLink": "https://drive.google.com/drive/folders/your-link",
+    "tech": ["Unity", "C#", "Game Design", "3D Modeling", "Audio Design"],
+    "featured": true
+  },
+  {
+    "id": "petverse",
+    "title": "PetVerse",
+    "category": "Game Development",
+    "description": "A Third-Person Gamified Pet Simulator - focused on creating a fun and interactive experience for kids.",
+    "fullDescription": "PetVerse is a third-person virtual pet simulation game developed entirely by me in Unity, focused on creating a fun and interactive experience for kids. Players can explore a lively 3D world, adopt pets, and engage in highly interactive activities like feeding, playing, training, and more. With a variety of immersive zones like the Adoption Area, Training Grounds, and Pet Playground, PetVerse combines creativity with gameplay to build emotional connections between players and their virtual pets. This project highlights my skills in game development, character interaction design, and kid-friendly gameplay mechanics.",
+    "image": "/src/assets/petverse.jpg",
+    "demoLink": "https://drive.google.com/drive/folders/your-link",
+    "tech": ["Unity", "C#", "3D Animation", "Game Design", "Child-Safe Design"],
+    "featured": true
+  },
+  {
+    "id": "petverse-vr",
+    "title": "Petverse VR",
+    "category": "VR Development",
+    "description": "An immersive and child-friendly virtual reality experience with built-in parental controls.",
+    "fullDescription": "Petverse VR is an immersive and child-friendly virtual reality experience that allows kids to adopt and care for magical virtual pets in a safe and engaging environment. Designed with both fun and responsibility in mind, Petverse lets children interact with a variety of adorable creatures—feeding them, playing games, and helping them grow—while subtly teaching valuable life skills like empathy and routine building. What sets Petverse apart is its built-in smart timer, which helps manage screen time by gently reminding kids when playtime is over and automatically ending the session after a set duration. To ensure a safe and controlled environment, the app includes robust parental controls such as a secure PIN lock and customizable usage limits, giving parents full oversight. With no internet required and absolutely no ads, Petverse is a safe offline experience that prioritizes children's well-being.",
+    "image": "/src/assets/petverse-vr.jpg",
+    "demoLink": "https://drive.google.com/drive/folders/your-link",
+    "tech": ["Unity", "VR Development", "C#", "Parental Controls", "AR/VR"],
+    "featured": true
+  },
+  {
+    "id": "celestial-ar",
+    "title": "Celestial AR",
+    "category": "AR Development",
+    "description": "An educational AR app that helps kids explore and learn about celestial bodies in an interactive way.",
+    "fullDescription": "Celestial AR is an educational AR app I developed using Unity that helps kids explore and learn about celestial bodies in an interactive way. It features a drawing area to identify planets and stars, and displays fun facts through popups. The app also includes a feedback form connected to Google Sheets for user input.",
+    "image": "/src/assets/celestial-ar.jpg",
+    "demoLink": "https://drive.google.com/drive/folders/your-link",
+    "tech": ["Unity", "AR Foundation", "C#", "Educational Tech", "Google Sheets API"],
+    "featured": true
+  },
+  {
+    "id": "no-light-poster",
+    "title": "No Light Left Game Poster",
+    "category": "Graphic Design",
+    "description": "Official poster for No Light Left horror game showcase - designed with Adobe Photoshop.",
+    "fullDescription": "This poster for No Light Left was designed using Adobe Photoshop by me, Rahul S, along with my teammate Rithika H, as part of our showcase for the Game Expo. It represents both of our horror games — No Light Left and its sequel No Light Left 2. We created this visual to capture the eerie atmosphere and intense suspense our games deliver.",
+    "image": "/src/assets/no-light-left.jpg",
+    "demoLink": "https://drive.google.com/drive/folders/your-link",
+    "tech": ["Adobe Photoshop", "Graphic Design", "Typography"],
+    "featured": false
+  },
+  {
+    "id": "calendar-2025",
+    "title": "2025 Calendar Design",
+    "category": "Graphic Design",
+    "description": "A creative calendar themed 'Game VR & FX in 2025 – Transform Storytelling into Immersive Magic'.",
+    "fullDescription": "This calendar for the year 2025 was designed by me, Rahul S, along with my teammate Rithika H, as part of a creative project from our design department. Titled 'Game VR & FX in 2025 – Transform Storytelling into Immersive Magic,' the theme reflects our shared vision of how technology and design are shaping the future of digital storytelling.",
+    "image": "/src/assets/celestial-ar.jpg",
+    "demoLink": "https://drive.google.com/drive/folders/your-link",
+    "tech": ["Adobe Photoshop", "Graphic Design", "Layout Design"],
+    "featured": false
+  },
+  {
+    "id": "cinematic-poetry",
+    "title": "Cinematic Poetry",
+    "category": "Video Editing",
+    "description": "A Visual Poem Through Film - original poem brought to life through carefully selected movie scenes.",
+    "fullDescription": "This project was entirely crafted by me for the official FilmClubREC. It features an original poem brought to life through carefully selected movie scenes, each one chosen to reflect the tone, rhythm, and emotional weight of the lines. With precise scene syncing, thematic layering, and cinematic transitions, the video explores various dimensions of emotion and visual storytelling.",
+    "image": "/src/assets/petverse.jpg",
+    "demoLink": "https://drive.google.com/drive/folders/your-link",
+    "tech": ["Video Editing", "Motion Graphics", "Storytelling"],
+    "featured": true
+  },
+  {
+    "id": "django-edit",
+    "title": "Django Unchained - Script to Screen",
+    "category": "Video Editing",
+    "description": "A powerful moment from Django Unchained in script-to-screen format.",
+    "fullDescription": "This edit was entirely created by me for the official FilmClubREC. It presents a powerful moment from Django Unchained in a script-to-screen format, where the movie scene plays in real time while the original screenplay lines are displayed beneath. From precise scene timing to script syncing, text styling, and cinematic pacing — every aspect was crafted to bring out the connection between writing and visual storytelling.",
+    "image": "/src/assets/no-light-left.jpg",
+    "demoLink": "https://drive.google.com/drive/folders/your-link",
+    "tech": ["Video Editing", "Typography", "Motion Design"],
+    "featured": false
+  }
+]

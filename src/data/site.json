@@ -1,0 +1,32 @@
+{
+  "name": "Rahul S",
+  "tagline": "AR/VR Developer • Video Editor • Game Designer",
+  "contact": {
+    "email": "rahulsaravanan44@gmail.com",
+    "phone": "+91 9944819246"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/in/rahul-saravanan",
+    "instagram": "https://www.instagram.com/rahul",
+    "github": "https://github.com/rahul",
+    "youtube": "https://www.youtube.com/@rahul",
+    "twitter": "https://twitter.com/rahul"
+  },
+  "about": "Hello! I'm a passionate and versatile creator specializing in AR/VR development, video editing, and game design. With a strong foundation in Unity, I build immersive, interactive experiences that blend storytelling with technology. I also work on crafting engaging visuals through graphic design and motion-driven content. Whether it's developing gamified applications, editing cinematic videos, or bringing virtual worlds to life, I love creating meaningful digital experiences that connect and inspire. I'm always exploring new tools and ideas to push creative and technical boundaries.",
+  "skills": [
+    { "name": "Unity", "level": 95, "category": "Game Development" },
+    { "name": "AR/VR Development", "level": 90, "category": "Immersive Tech" },
+    { "name": "Video Editing", "level": 95, "category": "Post-Production" },
+    { "name": "Motion Graphics", "level": 85, "category": "Visual Effects" },
+    { "name": "3D Modeling", "level": 80, "category": "3D Art" },
+    { "name": "Adobe Photoshop", "level": 90, "category": "Design" },
+    { "name": "Alight Motion", "level": 95, "category": "Mobile Editing" },
+    { "name": "Game Design", "level": 90, "category": "Game Development" }
+  ],
+  "codingProfiles": {
+    "github": "https://github.com/rahul",
+    "codepen": "https://codepen.io/rahul",
+    "leetcode": "https://leetcode.com/rahul"
+  },
+  "resume": "/resume.pdf"
+}
