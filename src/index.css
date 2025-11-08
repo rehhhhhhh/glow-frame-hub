@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Black Gradient with Green - Immersive Gaming Theme */
+    /* Golden Cinematic Theme */
     --background: 120 100% 3%;
     --foreground: 120 20% 95%;
 
@@ -18,18 +18,18 @@ All colors MUST be HSL.
     --popover: 120 50% 5%;
     --popover-foreground: 120 20% 95%;
 
-    /* Vibrant Green Accent Colors */
-    --primary: 142 76% 45%;
+    /* Radiant Golden Accent Colors */
+    --primary: 51 100% 50%; /* #FFD700 */
     --primary-foreground: 120 100% 5%;
-    --primary-glow: 142 80% 55%;
+    --primary-glow: 51 100% 60%;
 
-    --secondary: 142 70% 35%;
+    --secondary: 44 100% 50%; /* #FFB700 */
     --secondary-foreground: 120 20% 95%;
 
     --muted: 120 30% 15%;
     --muted-foreground: 120 10% 60%;
 
-    --accent: 142 80% 50%;
+    --accent: 44 100% 50%;
     --accent-foreground: 120 100% 5%;
 
     --destructive: 0 63% 31%;
@@ -37,17 +37,22 @@ All colors MUST be HSL.
 
     --border: 120 30% 18%;
     --input: 120 30% 18%;
-    --ring: 142 76% 45%;
+    --ring: 51 100% 50%;
 
     --radius: 0.75rem;
 
     /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(120 100% 3%), hsl(120 50% 5%));
     --gradient-card: linear-gradient(145deg, hsl(120 50% 6%), hsl(120 50% 4%));
-    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(142 76% 45% / 0.3), transparent 70%);
+    --gradient-glow: radial-gradient(circle at 50% 50%, hsl(51 100% 50% / 0.28), transparent 70%);
+
+    /* All Might inspired golden aura */
+    --gold-start: 51 100% 50%; /* #FFD700 */
+    --gold-end: 44 100% 50%;  /* #FFB700 */
+    --golden-gradient: linear-gradient(135deg, hsl(var(--gold-start)), hsl(var(--gold-end)));
     
     /* Shadows & Effects */
-    --shadow-glow: 0 0 40px hsl(142 76% 45% / 0.5);
+    --shadow-glow: 0 0 40px hsl(51 100% 50% / 0.45);
     --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.7);
     --film-grain: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
     
@@ -66,17 +71,17 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 120 100% 5%;
 
-    --primary: 142 76% 45%;
+    --primary: 51 100% 40%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 142 80% 55%;
+    --primary-glow: 51 100% 55%;
 
-    --secondary: 142 70% 35%;
+    --secondary: 44 100% 45%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 120 20% 96%;
     --muted-foreground: 120 10% 40%;
 
-    --accent: 142 80% 50%;
+    --accent: 44 100% 50%;
     --accent-foreground: 120 100% 5%;
 
     --destructive: 0 84.2% 60.2%;
@@ -84,11 +89,11 @@ All colors MUST be HSL.
 
     --border: 120 20% 90%;
     --input: 120 20% 90%;
-    --ring: 142 76% 45%;
+    --ring: 51 100% 45%;
 
-    --gradient-hero: linear-gradient(135deg, hsl(142 76% 95%), hsl(142 80% 98%));
+    --gradient-hero: linear-gradient(135deg, hsl(51 100% 97%), hsl(44 100% 98%));
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(120 20% 98%));
-    --shadow-glow: 0 0 30px hsl(142 76% 45% / 0.3);
+    --shadow-glow: 0 0 30px hsl(51 100% 50% / 0.3);
     --shadow-card: 0 10px 30px -10px hsl(0 0% 0% / 0.15);
   }
 }
@@ -98,8 +103,16 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html, body, #root {
+    height: 100%;
+  }
+
   body {
-    @apply bg-background text-foreground overflow-x-hidden;
+    /* Make background transparent so global gradient layer is visible */
+    background: transparent;
+    color: hsl(var(--foreground));
+    overflow-x: hidden;
+    font-family: 'Times New Roman', Times, serif !important;
   }
 
   /* Custom Cursor Styles */
@@ -121,6 +134,7 @@ All colors MUST be HSL.
     cursor: auto !important;
   }
 
+  /* Film grain overlay (topmost, very subtle) */
   body::before {
     content: '';
     position: fixed;
@@ -132,6 +146,19 @@ All colors MUST be HSL.
     pointer-events: none;
     opacity: 0.05;
     z-index: 9999;
+  }
+
+  /* Golden gradient background (behind everything) */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    /* Dimmed cinematic golden gradient */
+    background: linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)), var(--golden-gradient);
+    /* subtle vignette to keep text readable */
+    mask-image: radial-gradient(circle at 50% 35%, black 0%, rgba(0,0,0,0.9) 80%);
+    -webkit-mask-image: radial-gradient(circle at 50% 35%, black 0%, rgba(0,0,0,0.9) 80%);
+    z-index: -1;
   }
 }
 
@@ -174,4 +201,204 @@ All colors MUST be HSL.
       box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
     }
   }
+}
+
+.transformer-letter {
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: 'Orbitron', 'Exo 2', Arial Black, Arial, sans-serif;
+  font-weight: 900;
+  background: linear-gradient(90deg, #fff8d7 0%, #FFD700 28%, #FFA500 60%, #FFD700 88%, #fff8d7 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #FFD700;
+  letter-spacing: 0.09em;
+  font-size: 3rem;
+  filter: drop-shadow(0 2px 14px #FFD70088) drop-shadow(0 1px 10px #FFA50088) drop-shadow(0 0px 5px #fffda7cc);
+  text-shadow:
+    0 1.5px 11px #ffd700cc,
+    0 2.5px 17px #ffbc58a7,
+    0 0px 26px #ffe49e88;
+  position: relative;
+}
+
+.transformer-shine {
+  position: absolute; left: 0; top: 0; width: 100%; height: 100%;
+  pointer-events: none;
+  animation: transformer-shine-move 1.6s 1.1s cubic-bezier(.38,1.73,.59,1) 1 forwards;
+  opacity: 0.8;
+  mask-image: linear-gradient(65deg, transparent 41%, white 53%, transparent 60%);
+  -webkit-mask-image: linear-gradient(65deg, transparent 43%, white 56%, transparent 79%);
+  background: linear-gradient(65deg, #fff8d7 20%, #FFD70099 56%, #ffa500cc 75%, #fffbe6aa 100%);
+  filter: blur(2.5px); z-index: 2;
+}
+@keyframes transformer-shine-move {
+  from { transform: translateX(-70%); opacity: 0.06; }
+  52%  { opacity: .99; }
+  to   { transform: translateX(110%); opacity: 0.01; }
+}
+
+.nav-link {
+  position: relative;
+  display: inline-block;
+  color: #18181a;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.2em 1.1em;
+  border-radius: 2rem;
+  transition: color 0.27s cubic-bezier(.4,0,.2,1), filter 0.27s, background 0.34s, box-shadow 0.33s, transform 0.36s;
+  background: transparent;
+  z-index: 1;
+}
+.nav-link::before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  border-radius: 2rem;
+  opacity: 0;
+  z-index: 0;
+  background: var(--nav-hover-bg,rgba(23,23,23,0.98));
+  transition: opacity 0.36s cubic-bezier(.41,0,.18,1), background 0.34s;
+}
+.light .nav-link::before {
+  background: var(--nav-hover-bg-light,rgba(254,254,254,0.86));
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: #FFD700 !important;
+  filter: drop-shadow(0 1.5px 8px #FFD700cc) drop-shadow(0 0px 8px #FFA50088);
+  transform: scale(1.066);
+  background: none;
+  outline: none;
+  z-index: 2;
+}
+.light .nav-link:hover,
+.light .nav-link:focus-visible {
+  color: #FFD700 !important;
+}
+.dark .nav-link:hover,
+.dark .nav-link:focus-visible {
+  color: #fffbe5 !important;
+}
+.nav-link:hover::before,
+.nav-link:focus-visible::before {
+  opacity: 1;
+}
+
+/* Maintain underline/after for active/legacy effect */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -2px;
+  height: 2px;
+  background: linear-gradient(90deg, #FFD700, #FFA500 70%);
+  box-shadow: 0 0 6px #FFD70088;
+  border-radius: 99px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.28s cubic-bezier(.4,0,.2,1), opacity 0.22s;
+  opacity: 0.98;
+  z-index: 1;
+}
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: #FFD700;
+  filter: drop-shadow(0 2px 8px #FFD700) drop-shadow(0 0px 11px #FFA50077);
+}
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+.nav-link-active {
+  color: #FFD700 !important;
+  filter: drop-shadow(0 2px 9px #FFD700) drop-shadow(0 0px 7px #FFA500bb);
+}
+.nav-link-active::after {
+  transform: scaleX(1);
+  opacity: 1;
+}
+
+@media (max-width: 640px) {
+  .nav-link {
+    font-size: 1rem;
+    padding-bottom: 3.5px;
+  }
+  .nav-link::after {
+    bottom: -5px;
+  }
+}
+
+.perspective {
+  perspective: 1200px;
+}
+.cert-card {
+  transition: transform 0.6s cubic-bezier(.82,-0.07,.19,1.05);
+  transform-style: preserve-3d;
+  min-height: 320px;
+}
+.cert-card:hover .flip-front,
+.cert-card:focus-visible .flip-front {
+  transform: rotateY(180deg);
+}
+.cert-card:hover .flip-back,
+.cert-card:focus-visible .flip-back {
+  transform: rotateY(0deg);
+}
+.flip-front,
+.flip-back {
+  backface-visibility: hidden;
+  transition: transform 0.6s cubic-bezier(.82,-0.07,.19,1.05);
+  height: 100%;
+}
+.flip-back {
+  transform: rotateY(180deg);
+  z-index:2;
+  box-shadow: 0 6px 32px 0 #ffc74024;
+}
+.flip-front {
+  z-index: 1;
+}
+@media (max-width: 1024px) {
+  .cert-card { min-height: 220px; }
+}
+
+.golden-glow {
+  color: #FFD700 !important;
+  font-weight: 900;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.13em;
+  text-shadow: 0 2px 8px #ffd70035, 0 0px 3px #fff9df45, 0 1px 6px #ffe78444;
+  font-size: 3.4rem;
+  margin-top: 28px;
+  margin-bottom: 0.7rem;
+  display: block;
+  filter: drop-shadow(0 0 1.5px #ffd70040) drop-shadow(0 1.5px 3px #FFD70040);
+}
+
+.animate-float-soft {
+  animation: floatSoft 3s ease-in-out infinite;
+}
+
+@keyframes floatSoft {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(4px); }
+}
+
+.card-text {
+  color: #181818;
+  font-weight: 500;
+}
+.dark .card-text {
+  color: #fffbe9;
+}
+
+.card-title {
+  color: #FFD700;
+  font-weight: 700;
+  text-shadow: 0 1.5px 7px #ffd70040;
 }

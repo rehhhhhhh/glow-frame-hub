@@ -215,8 +215,8 @@ function Laptop() {
         <mesh position={[0, 0.5, -0.53]} rotation={[0.3, 0, 0]}>
           <circleGeometry args={[0.08, 32]} />
           <meshStandardMaterial 
-            color="#00ff00"
-            emissive="#00ff00"
+            color="#FFD700"
+            emissive="#FFD700"
             emissiveIntensity={0.8}
           />
         </mesh>
@@ -267,12 +267,12 @@ function VRHeadset() {
           />
         </mesh>
         
-        {/* Green Indicator Light */}
+        {/* Golden Indicator Light */}
         <mesh position={[0.4, 0.2, 0.2]}>
           <sphereGeometry args={[0.03, 16, 16]} />
           <meshStandardMaterial 
-            color="#00ff00"
-            emissive="#00ff00"
+            color="#FFD700"
+            emissive="#FFD700"
             emissiveIntensity={2}
           />
         </mesh>
@@ -295,14 +295,14 @@ export default function Enhanced3DScene() {
         
         {/* Lighting */}
         <ambientLight intensity={0.3} />
-        <pointLight position={[10, 10, 10]} intensity={1} color="#00ff00" castShadow />
-        <pointLight position={[-10, -10, -10]} intensity={0.5} color="#00ff00" />
+        <pointLight position={[10, 10, 10]} intensity={1} color="#FFD700" castShadow />
+        <pointLight position={[-10, -10, -10]} intensity={0.5} color="#FFB700" />
         <spotLight 
           position={[0, 5, 0]} 
           angle={0.3} 
           penumbra={1} 
           intensity={0.5} 
-          color="#00ff00"
+          color="#FFD700"
           castShadow 
         />
         

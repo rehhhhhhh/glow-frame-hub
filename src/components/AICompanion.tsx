@@ -6,7 +6,7 @@ import { Card } from "@/components/ui/card";
 import { useNavigate } from "react-router-dom";
 
 const responses = {
-  greeting: "Hi! I'm RahulBot, your guide to Rahul's portfolio. I can help you explore projects, skills, and more!",
+  greeting: "Hi! I'm REH, your guide to Rahul's portfolio. I can help you explore projects, skills, and more!",
   projects: "Check out Rahul's amazing projects including No Light Left, PetVerse, and AR/VR experiences!",
   skills: "Rahul specializes in Unity, AR/VR Development, Video Editing, and Game Design.",
   contact: "You can reach Rahul at rahulsaravanan44@gmail.com or call +91 9944819246",
@@ -63,7 +63,7 @@ export default function AICompanion() {
             <Card className="p-4 bg-card/95 backdrop-blur-xl border-primary/20">
               <div className="flex items-center gap-2 mb-4">
                 <Bot className="w-5 h-5 text-primary" />
-                <h3 className="font-semibold">RahulBot</h3>
+                <h3 className="font-semibold">REH</h3>
               </div>
 
               <div className="space-y-3 max-h-64 overflow-y-auto mb-4">

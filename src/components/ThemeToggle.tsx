@@ -1,31 +1,12 @@
-import { Moon, Sun } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
-import CursorToggle from "./CursorToggle";
+import { useEffect } from "react";
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
-
   useEffect(() => {
+    // Set default theme to dark and ensure it stays dark
     const root = document.documentElement;
-    if (theme === "dark") {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
-  }, [theme]);
+    root.classList.remove("light");
+    localStorage.setItem("theme", "dark");
+  }, []);
 
-  return (
-    <div className="fixed bottom-8 right-8 z-50 flex gap-2">
-      <Button
-        variant="outline"
-        size="icon"
-        onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        className="rounded-full bg-card/50 backdrop-blur-sm hover:bg-primary/20"
-      >
-        {theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-      </Button>
-      <CursorToggle />
-    </div>
-  );
+  return null; // Component doesn't render anything
 }

@@ -20,7 +20,7 @@
     { "name": "Motion Graphics", "level": 85, "category": "Visual Effects" },
     { "name": "3D Modeling", "level": 80, "category": "3D Art" },
     { "name": "Adobe Photoshop", "level": 90, "category": "Design" },
-    { "name": "Alight Motion", "level": 95, "category": "Mobile Editing" },
+    { "name": "Adobe Premiere Pro", "level": 95, "category": "Post-Production" },
     { "name": "Game Design", "level": 90, "category": "Game Development" }
   ],
   "codingProfiles": {
