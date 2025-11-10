@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: '/glow-frame-hub/', // GitHub Pages base path
+  base: '/', // Netlify base path
   server: {
     host: "::",
     port: 8080,
